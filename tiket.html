@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="description" content="Pilih tiket untuk Togo Festival 2026. Dapatkan tiket terbaikmu sebelum habis!">
+<meta name="theme-color" content="#4f46e5">
+<title>Pilih Tiket - Togo Festival 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎫</text></svg>">
+<style>
+:root{
+  --blue:#4f46e5;--blue-deep:#3730a3;--blue-light:#eef2ff;
+  --text:#0f172a;--text-soft:#475569;--muted:#94a3b8;--border:#e2e8f0;
+  --bg:#f8fafc;--card:#ffffff;
+  --red:#ef4444;--red-deep:#b91c1c;--green:#10b981;
+  --shadow-sm:0 1px 2px rgba(15,23,42,.04),0 1px 3px rgba(15,23,42,.06);
+  --shadow-md:0 4px 12px rgba(15,23,42,.06),0 2px 4px rgba(15,23,42,.04);
+  --shadow-lg:0 12px 32px rgba(79,70,229,.12),0 4px 12px rgba(15,23,42,.06);
+  --radius:18px;--ease:cubic-bezier(.4,0,.2,1);--ease-bounce:cubic-bezier(.34,1.56,.64,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+html,body{background:radial-gradient(1200px 600px at 50% -10%,rgba(99,102,241,.08),transparent 60%),radial-gradient(800px 400px at 100% 100%,rgba(245,158,11,.06),transparent 60%),#f5f7fb;color:var(--text);font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{min-height:100vh}
+
+.app{width:100%;max-width:920px;margin:0 auto;background:linear-gradient(180deg,#fff 0%,#fbfcff 100%);min-height:100vh;padding-bottom:120px;position:relative;box-shadow:0 0 80px rgba(79,70,229,.06)}
+
+.topbar{height:88px;display:flex;align-items:center;gap:22px;padding:0 38px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(226,232,240,.6)}
+.back{border:0;background:linear-gradient(135deg,#f1f5f9,#e2e8f0);line-height:1;cursor:pointer;color:var(--text);padding:0;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;transition:all .25s var(--ease-bounce);box-shadow:var(--shadow-sm)}
+.back:hover{background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;transform:translateY(-2px) scale(1.05);box-shadow:0 8px 20px rgba(79,70,229,.35)}
+.back:active{transform:translateY(0) scale(.96)}
+.topbar h1{font-size:30px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(135deg,var(--text) 0%,var(--blue-deep) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+.fomo-banner{position:sticky;top:88px;z-index:15;background:linear-gradient(90deg,var(--red-deep),var(--red),var(--red-deep));background-size:200% 100%;animation:fomoBgShift 3s infinite linear;color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:14px;box-shadow:0 4px 20px rgba(220,38,38,.35);overflow:hidden}
+.fomo-shine{position:absolute;top:0;left:-50%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg);animation:fomoShine 2.5s infinite}
+@keyframes fomoShine{0%{left:-50%}100%{left:150%}}
+.fomo-text{position:relative;text-shadow:0 1px 3px rgba(0,0,0,.3);animation:fomoPulse 1.5s infinite;text-transform:uppercase;letter-spacing:.5px}
+@keyframes fomoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.fomo-icon{font-size:16px;display:inline-block;animation:fomoIconBounce 1s infinite ease-in-out}
+@keyframes fomoIconBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px) rotate(-5deg)}}
+@keyframes fomoBgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+.coupon{padding:16px 38px;font-size:13px;color:var(--text-soft);display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border-bottom:1px solid rgba(226,232,240,.6)}
+.coupon svg{width:16px;height:16px;color:var(--blue);flex:none}
+.coupon-link{color:var(--blue);font-weight:700;cursor:pointer;text-decoration:none;border-bottom:2px solid transparent;transition:border-color .2s var(--ease)}
+.coupon-link:hover{border-bottom-color:var(--blue)}
+
+.info-box{margin:24px 38px;padding:16px;background:linear-gradient(135deg,var(--blue-light),#fff);border:1px solid #c7d2fe;border-radius:14px;display:flex;align-items:center;gap:12px;font-size:13px;line-height:1.5;font-weight:600;color:var(--text-soft);box-shadow:var(--shadow-sm)}
+.info-icon{width:36px;height:36px;border-radius:10px;background:#fff;display:grid;place-items:center;color:var(--blue);box-shadow:var(--shadow-sm);flex:none}
+.info-icon svg{width:18px;height:18px}
+
+.ticket-list{padding:0 38px;display:flex;flex-direction:column;gap:20px;margin-top:10px}
+.ticket-card{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:22px;position:relative;transition:all .3s var(--ease);box-shadow:var(--shadow-sm)}
+.ticket-card.sold-out{background:#f8fafc;border-style:dashed;border-color:#94a3b8;opacity:.75}
+.ticket-card.active{border:2px solid var(--blue);box-shadow:0 8px 24px rgba(79,70,229,.18);overflow:hidden}
+.ticket-card.active:hover{box-shadow:0 12px 32px rgba(79,70,229,.25)}
+
+.ticket-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.ticket-info h3{font-size:17px;font-weight:800;margin-bottom:4px;letter-spacing:-.01em}
+.ticket-price{font-size:15px;font-weight:700;color:var(--blue-deep)}
+
+.status-badge{padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;flex:none;display:inline-flex;align-items:center;gap:6px}
+.status-sold{background:#fee2e2;color:var(--red)}
+.status-available{background:#d1fae5;color:var(--green)}
+.status-available::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulseDot 2s infinite}
+@keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.4)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+
+.sold-out-text{margin-top:14px;padding:10px;background:#fee2e2;color:var(--red);border-radius:8px;font-size:12px;font-weight:700;text-align:center}
+
+.quantity-wrapper{margin:22px -22px 0;padding:22px 22px 0;border-top:2px dashed #cbd5e1;position:relative;display:flex;align-items:center;justify-content:space-between}
+.ticket-card.active .quantity-wrapper::before,.ticket-card.active .quantity-wrapper::after{content:'';position:absolute;top:-16px;width:32px;height:32px;background:var(--bg);border-radius:50%;z-index:10}
+.ticket-card.active .quantity-wrapper::before{left:-16px}
+.ticket-card.active .quantity-wrapper::after{right:-16px}
+
+.quantity-label{font-size:13px;font-weight:600;color:var(--text-soft)}
+.quantity-controls{display:flex;align-items:center;gap:10px}
+.qty-btn{width:34px;height:34px;border-radius:8px;border:none;background:var(--blue-light);color:var(--blue);cursor:pointer;display:grid;place-items:center;transition:all .2s var(--ease-bounce)}
+.qty-btn:hover:not(:disabled){background:var(--blue);color:#fff;transform:scale(1.05)}
+.qty-btn:active:not(:disabled){transform:scale(.95)}
+.qty-btn:disabled{opacity:.4;cursor:not-allowed}
+.qty-btn svg{width:16px;height:16px}
+.qty-number{min-width:32px;text-align:center;font-size:15px;font-weight:800;color:var(--text)}
+
+.bottom{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(920px,100%);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-top:1px solid rgba(226,232,240,.6);padding:16px 38px 20px;z-index:50;box-shadow:0 -8px 32px rgba(15,23,42,.08)}
+.checkout-btn{width:100%;height:52px;border:0;border-radius:14px;background:#e2e8f0;color:#94a3b8;font-size:17px;font-weight:800;cursor:not-allowed;position:relative;overflow:hidden;transition:all .25s var(--ease);font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px}
+.checkout-btn.active{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-deep) 100%);color:#fff;cursor:pointer;box-shadow:0 12px 28px rgba(79,70,229,.35),inset 0 1px 0 rgba(255,255,255,.2)}
+.checkout-btn.active::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);transition:left .6s var(--ease)}
+.checkout-btn.active:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(79,70,229,.45),inset 0 1px 0 rgba(255,255,255,.2)}
+.checkout-btn.active:hover::before{left:100%}
+.checkout-btn.active:active{transform:translateY(0) scale(.99)}
+.checkout-btn svg{width:18px;height:18px}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media (max-width:600px){
+  .topbar{height:72px;padding:0 18px;gap:14px}
+  .topbar h1{font-size:20px}
+  .back{width:40px;height:40px;border-radius:12px}
+  .fomo-banner{top:72px;font-size:13px;padding:10px 16px}
+  .coupon{padding:14px 18px;font-size:12px}
+  .info-box{margin:20px 18px;padding:14px;gap:10px;font-size:12px}
+  .ticket-list{padding:0 18px;gap:16px}
+  .ticket-card{padding:16px}
+  .ticket-info h3{font-size:16px}
+  .quantity-wrapper{margin:18px -16px 0;padding:18px 16px 0}
+  .bottom{padding:12px 18px 16px}
+  .checkout-btn{height:48px;font-size:16px}
+}
+@supports (padding:max(0px)){.bottom{padding-bottom:max(20px,env(safe-area-inset-bottom))}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+.ticket-description{border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-top:14px;background:#fafafa}.ticket-description p{line-height:1.6}.ticket-description .details-toggle{border:0;background:transparent;cursor:pointer;padding:4px 0}.ticket-description p.expanded{font-weight:600}
+.selectable-ticket{opacity:1;border-style:solid;border-color:var(--border)}
+.select-ticket-area{margin-top:16px}
+.select-ticket-btn{width:100%;border:0;border-radius:10px;padding:12px 16px;background:var(--blue);color:#fff;font:inherit;font-weight:800;cursor:pointer;transition:transform .2s,background .2s}
+.select-ticket-btn:hover{background:var(--blue-deep);transform:translateY(-1px)}
+.quantity-picker{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid #c7d2fe;border-radius:10px;background:#eef2ff}
+.quantity-picker[hidden]{display:none}
+.select-ticket-btn[hidden]{display:none}
+.selectable-ticket.selected{border-color:var(--blue);box-shadow:0 8px 24px rgba(79,70,229,.15)}
+
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <button class="back" onclick="history.back()" aria-label="Kembali ke halaman sebelumnya">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    <h1>Pilih Tiket</h1>
+  </header>
+
+  <div class="fomo-banner" role="alert" aria-live="assertive">
+    <div class="fomo-shine" aria-hidden="true"></div>
+    <span class="fomo-icon" aria-hidden="true">⚠️</span>
+    <span class="fomo-text">Promo Khusus Berlaku s.d. 11 Okt 2026!</span>
+    <span class="fomo-icon" aria-hidden="true">⚠️</span>
+  </div>
+
+  <div class="coupon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12V8H4v4M20 12v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4M20 12h-4a2 2 0 0 0 0 4h4"/></svg>
+    Punya kode kupon? Masukkan <span class="coupon-link">disini</span>
+  </div>
+
+  <div class="info-box reveal">
+    <div class="info-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </div>
+    <div>Informasi ketersediaan mengikuti status yang ditampilkan pada setiap kategori tiket.</div>
+  </div>
+
+  <section class="ticket-list" aria-label="Daftar tiket Togo Festival 2026">
+    <article class="ticket-card reveal selectable-ticket" data-ticket="VIP">
+      <div class="ticket-header">
+        <div class="ticket-info">
+          <h3>VIP</h3>
+          <div class="ticket-price">Rp 187.000</div>
+        </div>
+        <div class="status-badge status-available">Tersedia</div>
+      </div>
+      <div class="ticket-description">
+        <strong>🎟️ VIP Ticket</strong>
+        <p>Dapatkan akses area VIP ke seluruh rangkaian Togo Festival 2026 di Tuban Sport Center</p>
+        <button type="button" class="coupon-link details-toggle" aria-expanded="false">Tampilkan Lebih Banyak</button>
+      </div>
+
+      <div class="select-ticket-area">
+        <button type="button" class="select-ticket-btn" data-action="select">Pilih Tiket</button>
+        <div class="quantity-picker" hidden>
+          <span class="quantity-label">Jumlah tiket</span>
+          <div class="quantity-controls">
+            <button type="button" class="qty-btn" data-action="minus" aria-label="Kurangi jumlah tiket">−</button>
+            <output class="qty-number" aria-live="polite">1</output>
+            <button type="button" class="qty-btn" data-action="plus" aria-label="Tambah jumlah tiket">+</button>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="ticket-card reveal selectable-ticket" data-ticket="Festival">
+      <div class="ticket-header">
+        <div class="ticket-info">
+          <h3>Festival</h3>
+          <div class="ticket-price">Rp 99.000</div>
+        </div>
+        <div class="status-badge status-available">Tersedia</div>
+      </div>
+      <div class="ticket-description">
+        <strong>🎟️ Festival Ticket</strong>
+        <p>Dapatkan akses ke seluruh rangkaian Togo Festival 2026 di Tuban Sport Center</p>
+        <button type="button" class="coupon-link details-toggle" aria-expanded="false">Tampilkan Lebih Banyak</button>
+      </div>
+
+      <div class="select-ticket-area">
+        <button type="button" class="select-ticket-btn" data-action="select">Pilih Tiket</button>
+        <div class="quantity-picker" hidden>
+          <span class="quantity-label">Jumlah tiket</span>
+          <div class="quantity-controls">
+            <button type="button" class="qty-btn" data-action="minus" aria-label="Kurangi jumlah tiket">−</button>
+            <output class="qty-number" aria-live="polite">1</output>
+            <button type="button" class="qty-btn" data-action="plus" aria-label="Tambah jumlah tiket">+</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+</div>
+
+<div class="bottom">
+  <button type="button" id="checkoutButton" class="checkout-btn" disabled>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    Checkout
+  </button>
+</div>
+
+<script>
+document.querySelectorAll('.details-toggle').forEach((button) => {
+  button.addEventListener('click', () => {
+    const description = button.previousElementSibling;
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!expanded));
+    button.textContent = expanded ? 'Tampilkan Lebih Banyak' : 'Tampilkan Lebih Sedikit';
+    description.classList.toggle('expanded', !expanded);
+  });
+});
+const ticketCards = [...document.querySelectorAll('.selectable-ticket')];
+const checkoutButton = document.getElementById('checkoutButton');
+const selections = new Map();
+function refreshCheckout(){
+  const chosen = ticketCards.filter(card => (selections.get(card.dataset.ticket) || 0) > 0);
+  const totalCount = chosen.reduce((sum, card) => sum + selections.get(card.dataset.ticket), 0);
+  checkoutButton.disabled = totalCount === 0;
+  checkoutButton.classList.toggle('active', totalCount > 0);
+  checkoutButton.setAttribute('aria-label', totalCount ? `Checkout ${totalCount} tiket` : 'Checkout');
+  checkoutButton.dataset.count = String(totalCount);
+}
+ticketCards.forEach(card => {
+  const selectButton = card.querySelector('[data-action="select"]');
+  const picker = card.querySelector('.quantity-picker');
+  const output = card.querySelector('.qty-number');
+  card.querySelector('[data-action="minus"]').addEventListener('click', () => {
+    const next = Math.max(0, (selections.get(card.dataset.ticket) || 0) - 1);
+    selections.set(card.dataset.ticket, next);
+    output.textContent = String(next);
+    if (next === 0) { picker.hidden = true; selectButton.hidden = false; card.classList.remove('selected'); }
+    refreshCheckout();
+  });
+  card.querySelector('[data-action="plus"]').addEventListener('click', () => {
+    const next = Math.min(10, (selections.get(card.dataset.ticket) || 0) + 1);
+    selections.set(card.dataset.ticket, next);
+    output.textContent = String(next);
+    refreshCheckout();
+  });
+  selectButton.addEventListener('click', () => {
+    selections.set(card.dataset.ticket, 1);
+    output.textContent = '1';
+    selectButton.hidden = true;
+    picker.hidden = false;
+    card.classList.add('selected');
+    refreshCheckout();
+  });
+});
+checkoutButton.addEventListener('click', () => {
+  if (checkoutButton.disabled) return;
+  const chosen = ticketCards.filter(card => (selections.get(card.dataset.ticket) || 0) > 0);
+  const count = chosen.reduce((sum, card) => sum + selections.get(card.dataset.ticket), 0);
+  const total = chosen.reduce((sum, card) => sum + Number(card.querySelector('.ticket-price').textContent.replace(/[^0-9]/g, '')) * selections.get(card.dataset.ticket), 0);
+  const names = chosen.map(card => card.dataset.ticket + ' x' + selections.get(card.dataset.ticket)).join(', ');
+  localStorage.setItem('jumlahTiket', String(count));
+  localStorage.setItem('kategoriTiket', names);
+  localStorage.setItem('hargaTiket', String(Math.round(total / count)));
+  localStorage.setItem('detailPilihanTiket', JSON.stringify(chosen.map(card => ({nama:card.dataset.ticket, jumlah:selections.get(card.dataset.ticket), harga:Number(card.querySelector('.ticket-price').textContent.replace(/[^0-9]/g, ''))}))));
+  window.location.href = 'form.html';
+});
+refreshCheckout();
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+</script>
+</body>
+  </html>
