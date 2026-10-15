@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Form pemesanan tiket Togo Festival 2026 — Sabtu, 17 Oktober 2026, 19.00–00.00 WIB di Tuban Sport Center.">
+<meta property="og:title" content="Form Pemesanan Tiket — Togo Festival 2026">
+<meta property="og:description" content="Lengkapi data pembeli untuk melanjutkan ke pembayaran. Sabtu, 17 Oktober 2026 di Tuban Sport Center.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="banner.png">
+<meta property="og:image:alt" content="Banner Togo Festival 2026">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="banner.png" fetchpriority="high">
+<title>Form Pemesanan Tiket — Togo Festival 2026</title>
+<style>
+:root{
+  --primary:#2b3fd0;--primary-dark:#20309f;--primary-soft:#e8ecfb;
+  --text:#141824;--text-soft:#3c4354;--muted:#8d93a0;
+  --bg:#eef1ec;--border:#e3e6e0;
+  --red:#dc2626;--red-soft:#fef2f2;--green:#16a34a;
+  --radius:14px;--ease:cubic-bezier(.4,0,.2,1);
+  --shadow-sm:0 1px 3px rgba(20,24,36,.07);
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;-webkit-tap-highlight-color:transparent}
+button,input,select,textarea{-webkit-appearance:none;appearance:none;font:inherit;color:inherit}
+input[type="checkbox"]{-webkit-appearance:auto;appearance:auto}
+img{max-width:100%}
+body{background:var(--bg);color:var(--text);padding-bottom:calc(96px + env(safe-area-inset-bottom));overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--primary);outline-offset:3px}
+
+.container{width:100%;max-width:480px;margin:0 auto;background:var(--bg);min-height:100vh;box-shadow:0 0 40px rgba(20,24,36,.05);position:relative}
+.app-header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 10px rgba(20,24,36,.04)}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:#fff}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-img{width:40px;height:40px;border-radius:10px;object-fit:cover;box-shadow:var(--shadow-sm)}
+.logo-text{height:32px;width:auto;object-fit:contain;border-radius:6px}
+.lang{background:var(--bg);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600;color:var(--text-soft)}
+
+.progress{position:relative;padding:14px 28px 18px;background:var(--primary);overflow:hidden}
+.progress-track{position:absolute;top:26px;left:43px;right:43px;height:3px;background:rgba(255,255,255,.25);border-radius:999px;z-index:1}
+.progress-fill{height:100%;width:33.33%;background:#fff;border-radius:999px;box-shadow:0 0 8px rgba(255,255,255,.5);transition:width .7s var(--ease)}
+.progress-steps{position:relative;z-index:2;display:flex;justify-content:space-between;list-style:none}
+.step{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1}
+.step-dot{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:rgba(255,255,255,.7);position:relative}
+.step-num{display:block;line-height:1}
+.step-check{display:none;width:14px;height:14px;stroke:var(--primary);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.step.completed .step-dot{background:#fff;border-color:#fff;color:var(--primary)}
+.step.completed .step-num{display:none}
+.step.completed .step-check{display:block}
+.step.active .step-dot{background:#fff;border-color:#fff;color:var(--primary);box-shadow:0 0 0 4px rgba(255,255,255,.25);animation:stepPulse 2.2s ease-in-out infinite}
+.step.active .step-dot::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);animation:stepRing 2.2s ease-out infinite}
+@keyframes stepPulse{0%,100%{box-shadow:0 0 0 4px rgba(255,255,255,.25)}50%{box-shadow:0 0 0 8px rgba(255,255,255,.1)}}
+@keyframes stepRing{0%{transform:scale(.85);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+.step-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+.step.active .step-label,.step.completed .step-label{color:#fff}
+
+.banner-wrap{padding:16px 20px 0}
+.banner-img{width:100%;height:auto;border-radius:16px;display:block;box-shadow:0 4px 18px rgba(20,24,36,.1)}
+
+.content{padding:24px 20px}
+.page-title{font-size:20px;font-weight:800;margin-bottom:4px}
+.page-subtitle{font-size:13px;color:var(--muted);margin-bottom:24px}
+
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px;box-shadow:var(--shadow-sm)}
+.card-title{font-size:16px;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.card-title::before{content:'';width:4px;height:18px;background:var(--primary);border-radius:2px;flex:none}
+.card-note{font-size:11px;font-weight:600;color:var(--muted)}
+
+.event-hero{text-align:center;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.event-hero h2{font-size:18px;font-weight:800;margin-bottom:4px}
+.event-hero p{color:var(--muted);font-size:13px;margin-bottom:12px}
+.event-info{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;color:var(--text-soft);font-size:12px;font-weight:600;background:var(--bg);padding:8px 12px;border-radius:10px}
+.event-info div{display:flex;align-items:center;gap:6px}
+.event-info svg{width:14px;height:14px;flex:none}
+
+.summary-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--border);font-size:14px;color:var(--text-soft)}
+.summary-row strong{color:var(--text);font-weight:700;overflow-wrap:anywhere;text-align:right}
+.summary-row.summary-item{font-size:13px}
+.summary-row.summary-empty{color:var(--red);justify-content:center;border-bottom:none}
+.summary-row.total{font-size:18px;font-weight:800;color:var(--text);border-bottom:none;margin-top:8px;padding-top:12px;border-top:2px solid var(--border)}
+.total-amount{color:var(--primary)}
+
+.form-group{margin-bottom:16px}
+.form-group:last-child{margin-bottom:0}
+.form-group label{display:block;font-weight:600;font-size:13px;margin-bottom:8px;cursor:pointer}
+.input-icon-wrap{position:relative;display:flex;align-items:center}
+.input-icon{position:absolute;left:16px;width:16px;height:16px;color:var(--muted);pointer-events:none}
+
+input,select,textarea{width:100%;padding:12px 16px 12px 40px;border-radius:10px;border:1px solid var(--border);background:#f6f7f4;font-size:14px;transition:border-color .2s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease)}
+textarea{resize:vertical;min-height:80px;padding-left:16px}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238d93a0' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(43,63,208,.12)}
+input.error,select.error,textarea.error{border-color:var(--red);background:var(--red-soft);animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+.check{display:flex;gap:12px;margin-top:12px;align-items:flex-start;background:var(--bg);padding:12px;border-radius:10px;border:1px solid var(--border)}
+.check:first-of-type{margin-top:0}
+.check input{width:20px;height:20px;min-width:20px;accent-color:var(--primary);cursor:pointer;margin-top:2px;padding:0;box-shadow:none}
+.check label{font-size:12px;color:var(--text-soft);cursor:pointer;line-height:1.5}
+
+.holder-section-title{font-size:20px;font-weight:800;margin-bottom:4px}
+.holder-section-sub{font-size:13px;color:var(--muted);margin-bottom:16px}
+.holder-intro{margin-bottom:16px}
+.holder-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 20px 20px 24px;margin-bottom:16px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;animation:slideUp .35s var(--ease)}
+.holder-card::before{content:'';position:absolute;top:0;left:0;width:5px;height:100%;background:var(--primary)}
+.holder-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px dashed var(--border)}
+.holder-badge{width:38px;height:38px;border-radius:50%;background:var(--primary);color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.holder-info{flex:1}
+.holder-title{font-size:15px;font-weight:700;line-height:1.3}
+.holder-sub{font-size:11px;color:var(--muted);font-weight:500;margin-top:2px}
+.same-check{display:flex;align-items:center;gap:8px;margin-bottom:14px;padding:10px 12px;background:var(--primary-soft);border-radius:10px;border:1px dashed var(--primary);cursor:pointer;font-size:12px;font-weight:600;color:var(--primary)}
+.same-check input{width:16px;height:16px;min-width:16px;accent-color:var(--primary);cursor:pointer;padding:0;margin:0;box-shadow:none}
+.holder-card input:read-only{opacity:.55;cursor:not-allowed;background:var(--bg)}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 20px;padding-bottom:max(12px,env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--border);box-shadow:0 -4px 20px rgba(20,24,36,.05);z-index:998}
+.btn-lanjut{width:100%;border:none;background:var(--primary);color:#fff;font-size:14px;font-weight:800;padding:15px 28px;border-radius:12px;cursor:pointer;box-shadow:0 4px 15px rgba(43,63,208,.3);transition:background .25s var(--ease),transform .25s var(--ease);white-space:nowrap;display:flex;justify-content:center;align-items:center;gap:8px;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.btn-lanjut svg{width:16px;height:16px;flex:none}
+.btn-lanjut:active{transform:scale(.98)}
+.btn-lanjut:disabled{opacity:.7;cursor:not-allowed;transform:none;box-shadow:none;background:var(--muted)}
+.btn-lanjut .spinner{width:18px;height:18px;border-width:3px;margin:0;flex:0 0 auto}
+
+.site-footer{text-align:center;padding:36px 20px 8px;margin-top:20px;border-top:1px solid var(--border)}
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px}
+.footer-logo{width:30px;height:30px;border-radius:8px;object-fit:cover}
+.footer-name{height:24px;width:auto;object-fit:contain;border-radius:4px}
+.footer-contact{display:flex;flex-direction:column;align-items:center;gap:8px}
+.footer-contact-item{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--text);opacity:.75;text-decoration:none;transition:opacity .2s var(--ease)}
+.footer-contact-item svg{width:16px;height:16px;flex-shrink:0}
+.footer-sep{border:0;height:1px;background:var(--border);margin:18px 0 14px}
+.footer-copy{font-size:11.5px;font-weight:500;color:var(--text);opacity:.45}
+
+.loading-overlay{visibility:hidden;opacity:0;position:fixed;inset:0;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:99999;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:24px;text-align:center;transition:opacity .3s var(--ease)}
+.loading-overlay.active{visibility:visible;opacity:1}
+.spinner-box{width:70px;height:70px;display:flex;justify-content:center;align-items:center;border-radius:50%;background:#fff;box-shadow:0 10px 30px rgba(20,24,36,.1);margin-bottom:20px}
+.spinner{width:35px;height:35px;border:4px solid rgba(43,63,208,.1);border-top-color:var(--primary);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{font-size:16px;font-weight:700}
+.loading-sub{font-size:13px;color:var(--muted);margin-top:8px}
+
+.nojs-warning{background:#FFF7E0;border-bottom:1px solid #F1E3B0;color:#7A5B00;font-size:12px;font-weight:600;text-align:center;padding:10px 16px;line-height:1.5}
+
+@media (hover:hover){
+  .btn-lanjut:not(:disabled):hover{background:var(--primary-dark);transform:translateY(-1px)}
+  .same-check:hover{background:#dde4fa}
+  .footer-contact-item:hover{opacity:1}
+}
+@media (max-width:480px){.container{box-shadow:none}}
+@media (max-width:380px){
+  .topbar{padding:14px 16px}
+  .content{padding:20px 16px}
+  .banner-wrap{padding:14px 16px 0}
+  .card{padding:16px;border-radius:14px}
+  .event-info{gap:8px}
+  .btn-lanjut{padding:14px 16px;font-size:13px}
+  .progress{padding:14px 16px 16px}
+  .progress-track{left:33px;right:33px}
+  .step-label{font-size:9px;letter-spacing:.2px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+  .step.active .step-dot,.step.active .step-dot::after{animation:none}
+}
+</style>
+<noscript><style>.loading-overlay{display:none!important}</style></noscript>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="app-header">
+    <div class="topbar">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo Yesplis" class="logo-img" width="40" height="40">
+        <img src="logo.png" alt="Yesplis" class="logo-text">
+      </a>
+      <div class="lang">🇮🇩 ID</div>
+    </div>
+
+    <div class="progress" aria-label="Progress pemesanan">
+      <div class="progress-track" aria-hidden="true"><div class="progress-fill"></div></div>
+      <ol class="progress-steps">
+        <li class="step completed">
+          <div class="step-dot">
+            <span class="step-num">1</span>
+            <svg class="step-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="step-label">Pilih Tiket</span>
+        </li>
+        <li class="step active" aria-current="step">
+          <div class="step-dot">
+            <span class="step-num">2</span>
+            <svg class="step-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="step-label">Data Pembeli</span>
+        </li>
+        <li class="step">
+          <div class="step-dot">
+            <span class="step-num">3</span>
+            <svg class="step-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="step-label">Pembayaran</span>
+        </li>
+        <li class="step">
+          <div class="step-dot">
+            <span class="step-num">4</span>
+            <svg class="step-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="step-label">E-Ticket</span>
+        </li>
+      </ol>
+    </div>
+  </header>
+
+  <noscript><div class="nojs-warning">⚠️ JavaScript dinonaktifkan. Aktifkan JavaScript di browser Anda untuk melihat ringkasan pesanan dan melanjutkan pemesanan.</div></noscript>
+
+  <div class="banner-wrap">
+    <img class="banner-img" src="banner.png" alt="Banner Togo Festival 2026" fetchpriority="high" decoding="async" width="987" height="542">
+  </div>
+
+  <div class="content">
+
+    <div class="page-title">Form Pemesanan Tiket</div>
+    <div class="page-subtitle">Lengkapi data berikut sebelum melanjutkan ke pembayaran.</div>
+
+    <div class="card">
+      <div class="event-hero">
+        <h2>Togo Festival 2026</h2>
+        <p>Sabtu, 17 Oktober 2026 • 19.00–00.00 WIB</p>
+        <div class="event-info">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Sab, 17 Okt 2026</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Tuban Sport Center</div>
+        </div>
+      </div>
+
+      <div class="card-title">Ringkasan Pesanan</div>
+
+      <div class="summary-row"><span>Jenis Tiket</span><strong id="jenisTiket">-</strong></div>
+      <div id="detailTiket"></div>
+      <div class="summary-row"><span>Jumlah Tiket</span><strong id="jumlahTiket">0 Tiket</strong></div>
+      <div class="summary-row total"><span>Total Bayar</span><span class="total-amount" id="totalBayar">Rp0</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Data Pemesan <span class="card-note">(Pemegang Tiket #1)</span></div>
+
+      <div class="form-group">
+        <label for="nama">Nama Lengkap (sesuai identitas)</label>
+        <div class="input-icon-wrap">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+          <input id="nama" type="text" placeholder="Masukkan nama lengkap" autocomplete="name" maxlength="120">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="identitas">Jenis Identitas</label>
+        <div class="input-icon-wrap">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M5 16c.8-1.4 1.8-2 3-2s2.2.6 3 2M14 9h5M14 13h5"/></svg>
+          <select id="identitas">
+            <option value="">Pilih Jenis Identitas</option>
+            <option>KTP</option>
+            <option>SIM</option>
+            <option>Paspor</option>
+            <option>Kartu Pelajar</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nomorId">Nomor Identitas</label>
+        <div class="input-icon-wrap">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14M5 15h14M10 4 8 20M16 4l-2 16"/></svg>
+          <input id="nomorId" type="text" placeholder="Masukkan nomor identitas" autocomplete="off" maxlength="40">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail Aktif</label>
+        <div class="input-icon-wrap">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <input id="email" type="email" placeholder="contoh@email.com" autocomplete="email" maxlength="254">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="wa">No. WhatsApp Aktif</label>
+        <div class="input-icon-wrap">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+          <input id="wa" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel" inputmode="tel" maxlength="20">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="alamat">Alamat / Tempat Tinggal</label>
+        <div class="input-icon-wrap">
+          <textarea id="alamat" placeholder="Masukkan alamat lengkap" autocomplete="street-address" maxlength="600"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div id="holderContainer"></div>
+
+    <div class="card">
+      <div class="card-title">Persetujuan</div>
+      <div class="check">
+        <input type="checkbox" id="setuju1">
+        <label for="setuju1">Data yang saya isi adalah benar dan dapat dipertanggungjawabkan.</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="setuju2">
+        <label for="setuju2">Saya menyetujui syarat dan ketentuan acara serta kebijakan privasi.</label>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Logo Yesplis" class="footer-logo" width="30" height="30" loading="lazy" decoding="async">
+        <img src="logo.png" alt="Yesplis" class="footer-name" loading="lazy" decoding="async">
+      </div>
+      <div class="footer-contact">
+        <a class="footer-contact-item" href="https://wa.me/628217003017" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          +62 821-7003-017
+        </a>
+        <a class="footer-contact-item" href="mailto:cs@yesplis.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          cs@yesplis.com
+        </a>
+      </div>
+      <hr class="footer-sep">
+      <p class="footer-copy">&copy;2026 Togo Festival 2026. Informasi berdasarkan materi acara.</p>
+    </footer>
+
+  </div>
+
+</div>
+
+<div class="sticky">
+  <button type="button" class="btn-lanjut" id="lanjut">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    LANJUT KE PEMBAYARAN
+  </button>
+</div>
+
+<div id="loading" class="loading-overlay">
+  <div class="spinner-box"><div class="spinner"></div></div>
+  <div class="loading-text">Memproses Pesanan...</div>
+  <div class="loading-sub">Mohon tunggu sebentar</div>
+</div>
+
+<script>
+'use strict';
+
+function safeJSON(value,fallback){
+  try{const parsed=JSON.parse(value);return parsed??fallback}catch(_){return fallback}
+}
+function escapeHTML(str){
+  return String(str).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function formatRupiah(n){
+  return 'Rp'+Math.round(Number(n)||0).toLocaleString('id-ID');
+}
+
+const jumlahTiket=Math.max(0,Math.floor(Number(localStorage.getItem('jumlahTiket'))||0));
+const kategoriTiket=localStorage.getItem('kategoriTiket')||'-';
+const storedHarga=Number(localStorage.getItem('hargaTiket'))||0;
+const detailRaw=safeJSON(localStorage.getItem('detailPilihanTiket'),[]);
+const detailItems=Array.isArray(detailRaw)?detailRaw.filter(i=>i&&i.nama&&Number(i.jumlah)>0&&Number(i.harga)>=0):[];
+
+let total,hargaPerTiket;
+if(detailItems.length){
+  total=detailItems.reduce((s,i)=>s+Number(i.harga)*Number(i.jumlah),0);
+  const qty=detailItems.reduce((s,i)=>s+Number(i.jumlah),0);
+  hargaPerTiket=qty>0?Math.round(total/qty):storedHarga;
+}else{
+  hargaPerTiket=storedHarga;
+  total=jumlahTiket*hargaPerTiket;
+}
+
+const detailWrap=document.getElementById('detailTiket');
+const jenisEl=document.getElementById('jenisTiket');
+const jumlahEl=document.getElementById('jumlahTiket');
+const totalEl=document.getElementById('totalBayar');
+
+if(jumlahTiket>0&&kategoriTiket!=='-'){
+  if(detailItems.length){
+    detailWrap.innerHTML=detailItems.map(i=>'<div class="summary-row summary-item"><span>'+escapeHTML(i.nama)+' \u00d7'+Number(i.jumlah)+'</span><strong>'+formatRupiah(Number(i.harga)*Number(i.jumlah))+'</strong></div>').join('');
+    jenisEl.textContent=detailItems.map(i=>i.nama).join(', ');
+  }else{
+    detailWrap.innerHTML='<div class="summary-row summary-item"><span>'+escapeHTML(kategoriTiket)+' ('+jumlahTiket+'x)</span><strong>'+formatRupiah(total)+'</strong></div>';
+    jenisEl.textContent=kategoriTiket;
+  }
+  jumlahEl.textContent=jumlahTiket+' Tiket';
+  totalEl.textContent=formatRupiah(total);
+}else{
+  detailWrap.innerHTML='<div class="summary-row summary-empty">Tidak ada tiket dipilih</div>';
+  jenisEl.textContent='-';
+  jumlahEl.textContent='0 Tiket';
+  totalEl.textContent=formatRupiah(0);
+}
+
+const bannerImg=document.querySelector('.banner-img');
+if(bannerImg)bannerImg.addEventListener('error',()=>{bannerImg.style.display='none'});
+
+const namaEl=document.getElementById('nama');
+const identitasEl=document.getElementById('identitas');
+const nomorIdEl=document.getElementById('nomorId');
+const emailEl=document.getElementById('email');
+const waEl=document.getElementById('wa');
+const alamatEl=document.getElementById('alamat');
+const setuju1El=document.getElementById('setuju1');
+const setuju2El=document.getElementById('setuju2');
+const loadingEl=document.getElementById('loading');
+const lanjutBtn=document.getElementById('lanjut');
+const holderContainer=document.getElementById('holderContainer');
+
+const emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const phoneRe=/^(\+62|62|0)8\d{7,12}$/;
+
+function saveDraft(){
+  try{
+    localStorage.setItem('draft_nama',namaEl.value.trimStart());
+    localStorage.setItem('draft_identitas',identitasEl.value);
+    localStorage.setItem('draft_nomorId',nomorIdEl.value.trim());
+    localStorage.setItem('draft_email',emailEl.value.trim());
+    localStorage.setItem('draft_wa',waEl.value.trim());
+    localStorage.setItem('draft_alamat',alamatEl.value.trimStart());
+  }catch(e){}
+}
+function restoreDraft(){
+  namaEl.value=localStorage.getItem('draft_nama')||'';
+  identitasEl.value=localStorage.getItem('draft_identitas')||'';
+  nomorIdEl.value=localStorage.getItem('draft_nomorId')||'';
+  emailEl.value=localStorage.getItem('draft_email')||'';
+  waEl.value=localStorage.getItem('draft_wa')||'';
+  alamatEl.value=localStorage.getItem('draft_alamat')||'';
+}
+restoreDraft();
+
+[namaEl,identitasEl,nomorIdEl,emailEl,waEl,alamatEl].forEach(el=>{
+  const evt=el.tagName==='SELECT'?'change':'input';
+  el.addEventListener(evt,()=>{saveDraft();el.classList.remove('error')});
+});
+
+function toggleReadOnly(card,locked){
+  ['h-nama','h-email','h-wa'].forEach(cls=>{
+    card.querySelector('.'+cls).readOnly=locked;
+  });
+}
+
+function saveHoldersDraft(){
+  const draftData=[];
+  holderContainer.querySelectorAll('.holder-card').forEach(card=>{
+    draftData.push({
+      index:parseInt(card.querySelector('.h-nama').dataset.holder,10),
+      nama:card.querySelector('.h-nama').value,
+      email:card.querySelector('.h-email').value,
+      wa:card.querySelector('.h-wa').value,
+      same:card.querySelector('.same-pemesan').checked
+    });
+  });
+  try{localStorage.setItem('draft_holders',JSON.stringify(draftData))}catch(e){}
+}
+
+function generateHolders(count){
+  holderContainer.innerHTML='';
+  if(count<=1)return;
+
+  const titleDiv=document.createElement('div');
+  titleDiv.className='holder-intro';
+  titleDiv.innerHTML='<div class="holder-section-title">Data Pemegang Tiket</div><div class="holder-section-sub">Setiap tiket wajib memiliki data pemegang. Tiket #1 mengikuti data pemesan.</div>';
+  holderContainer.appendChild(titleDiv);
+
+  for(let i=2;i<=count;i++){
+    const card=document.createElement('div');
+    card.className='holder-card';
+    card.innerHTML=
+      '<div class="holder-head">'+
+        '<div class="holder-badge">'+i+'</div>'+
+        '<div class="holder-info">'+
+          '<div class="holder-title">Data Pemegang Tiket #'+i+'</div>'+
+          '<div class="holder-sub">Tiket ke-'+i+' dari '+count+'</div>'+
+        '</div>'+
+      '</div>'+
+      '<label class="same-check">'+
+        '<input type="checkbox" class="same-pemesan" data-holder="'+i+'">'+
+        'Sama dengan Data Pemesan'+
+      '</label>'+
+      '<div class="form-group">'+
+        '<label>Nama Lengkap</label>'+
+        '<div class="input-icon-wrap">'+
+          '<svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>'+
+          '<input class="h-nama" data-holder="'+i+'" type="text" placeholder="Nama lengkap pemegang tiket #'+i+'" maxlength="120" autocomplete="off" aria-label="Nama lengkap pemegang tiket '+i+'">'+
+        '</div>'+
+      '</div>'+
+      '<div class="form-group">'+
+        '<label>E-mail Aktif</label>'+
+        '<div class="input-icon-wrap">'+
+          '<svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'+
+          '<input class="h-email" data-holder="'+i+'" type="email" placeholder="email@contoh.com" maxlength="254" autocomplete="off" aria-label="E-mail pemegang tiket '+i+'">'+
+        '</div>'+
+      '</div>'+
+      '<div class="form-group">'+
+        '<label>No. WhatsApp</label>'+
+        '<div class="input-icon-wrap">'+
+          '<svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>'+
+          '<input class="h-wa" data-holder="'+i+'" type="tel" placeholder="08xxxxxxxxxx" maxlength="20" inputmode="tel" autocomplete="off" aria-label="Nomor WhatsApp pemegang tiket '+i+'">'+
+        '</div>'+
+      '</div>';
+    holderContainer.appendChild(card);
+  }
+
+  const draftHoldersRaw=safeJSON(localStorage.getItem('draft_holders'),[]);
+  const draftHolders=Array.isArray(draftHoldersRaw)?draftHoldersRaw:[];
+
+  draftHolders.forEach(d=>{
+    const namaInput=holderContainer.querySelector('.h-nama[data-holder="'+d.index+'"]');
+    if(!namaInput)return;
+    const card=namaInput.closest('.holder-card');
+    card.querySelector('.h-nama').value=d.nama||'';
+    card.querySelector('.h-email').value=d.email||'';
+    card.querySelector('.h-wa').value=d.wa||'';
+    if(d.same){
+      card.querySelector('.same-pemesan').checked=true;
+      toggleReadOnly(card,true);
+    }
+  });
+
+  holderContainer.querySelectorAll('input').forEach(input=>{
+    input.addEventListener('input',saveHoldersDraft);
+    input.addEventListener('change',saveHoldersDraft);
+    if(!input.classList.contains('same-pemesan')){
+      input.addEventListener('input',()=>input.classList.remove('error'));
+    }
+  });
+
+  holderContainer.querySelectorAll('.same-pemesan').forEach(cb=>{
+    cb.addEventListener('change',function(){
+      const card=this.closest('.holder-card');
+      toggleReadOnly(card,this.checked);
+      if(this.checked){
+        card.querySelector('.h-nama').value=namaEl.value;
+        card.querySelector('.h-email').value=emailEl.value;
+        card.querySelector('.h-wa').value=waEl.value;
+      }
+      saveHoldersDraft();
+    });
+  });
+}
+
+function syncSameAsPemesan(){
+  holderContainer.querySelectorAll('.same-pemesan:checked').forEach(cb=>{
+    const card=cb.closest('.holder-card');
+    card.querySelector('.h-nama').value=namaEl.value;
+    card.querySelector('.h-email').value=emailEl.value;
+    card.querySelector('.h-wa').value=waEl.value;
+  });
+  saveHoldersDraft();
+}
+
+[namaEl,emailEl,waEl].forEach(el=>el.addEventListener('input',syncSameAsPemesan));
+
+generateHolders(jumlahTiket);
+
+let isSubmitting=false;
+
+lanjutBtn.addEventListener('click',async()=>{
+  if(isSubmitting)return;
+
+  if(jumlahTiket===0||kategoriTiket==='-'){
+    alert('Anda belum memilih tiket. Silakan pilih tiket terlebih dahulu.');
+    location.href='tiket.html';
+    return;
+  }
+
+  const wajib=[namaEl,identitasEl,nomorIdEl,emailEl,waEl,alamatEl];
+  let isValid=true;
+  wajib.forEach(f=>f.classList.remove('error'));
+
+  for(const field of wajib){
+    if(!field.value.trim()){
+      field.classList.add('error');
+      isValid=false;
+    }
+  }
+  if(emailEl.value.trim()&&!emailRe.test(emailEl.value.trim())){
+    emailEl.classList.add('error');
+    isValid=false;
+  }
+  if(waEl.value.trim()&&!phoneRe.test(waEl.value.trim().replace(/[\s-]/g,''))){
+    waEl.classList.add('error');
+    isValid=false;
+  }
+
+  if(!isValid){
+    alert('Mohon lengkapi semua data wajib (berwarna merah).');
+    const firstError=document.querySelector('#holderContainer .error, .card .error');
+    if(firstError)firstError.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+
+  let holdersValid=true;
+  const holdersData=[];
+
+  if(jumlahTiket>1){
+    holderContainer.querySelectorAll('.holder-card').forEach(card=>{
+      const idx=parseInt(card.querySelector('.h-nama').dataset.holder,10);
+      const hNama=card.querySelector('.h-nama');
+      const hEmail=card.querySelector('.h-email');
+      const hWa=card.querySelector('.h-wa');
+
+      hNama.classList.remove('error');
+      hEmail.classList.remove('error');
+      hWa.classList.remove('error');
+
+      if(!hNama.value.trim()){hNama.classList.add('error');holdersValid=false;}
+      if(!hEmail.value.trim()||!emailRe.test(hEmail.value.trim())){hEmail.classList.add('error');holdersValid=false;}
+      if(!hWa.value.trim()||!phoneRe.test(hWa.value.trim().replace(/[\s-]/g,''))){hWa.classList.add('error');holdersValid=false;}
+
+      holdersData.push({tiket:idx,nama:hNama.value.trim(),email:hEmail.value.trim(),wa:hWa.value.trim()});
+    });
+
+    if(!holdersValid){
+      alert('Mohon lengkapi data pemegang tiket (berwarna merah).');
+      const firstError=holderContainer.querySelector('.error');
+      if(firstError)firstError.scrollIntoView({behavior:'smooth',block:'center'});
+      return;
+    }
+  }
+
+  if(!setuju1El.checked||!setuju2El.checked){
+    alert('Harap centang seluruh kotak persetujuan.');
+    return;
+  }
+
+  isSubmitting=true;
+  lanjutBtn.disabled=true;
+  lanjutBtn.setAttribute('aria-busy','true');
+  lanjutBtn.innerHTML='<div class="spinner"></div> Memproses...';
+  loadingEl.classList.add('active');
+
+  const dataPemesan={
+    nama:namaEl.value,
+    wa:waEl.value,
+    email:emailEl.value,
+    identitas:identitasEl.value,
+    nomorId:nomorIdEl.value,
+    alamat:alamatEl.value,
+    holders:holdersData,
+    cart:{
+      jenis:kategoriTiket,
+      qty:jumlahTiket,
+      harga:hargaPerTiket,
+      totalPrice:total
+    }
+  };
+
+  try{
+    localStorage.setItem('data_pemesan',JSON.stringify(dataPemesan));
+    ['draft_nama','draft_identitas','draft_nomorId','draft_email','draft_wa','draft_alamat','draft_holders'].forEach(k=>localStorage.removeItem(k));
+  }catch(e){}
+
+  const pemegangText=holdersData.length>0
+    ?holdersData.map(h=>'#'+h.tiket+': '+h.nama+' | '+h.email+' | '+h.wa).join('\n')
+    :'Hanya 1 tiket (sama dengan pemesan)';
+
+  try{
+    const response=await fetch('https://formspree.io/f/mojojdpl',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        nama:namaEl.value.trim(),
+        identitas:identitasEl.value,
+        nomor_id:nomorIdEl.value.trim(),
+        email:emailEl.value.trim(),
+        whatsapp:waEl.value.trim(),
+        alamat:alamatEl.value.trim(),
+        pemegang_tiket:pemegangText,
+        jenis_tiket:kategoriTiket,
+        jumlah_tiket:jumlahTiket,
+        total_bayar:total
+      })
+    });
+    if(!response.ok)console.warn('Formspree response:',response.status);
+  }catch(e){
+    console.log('Formspree error:',e);
+  }
+
+  window.setTimeout(()=>{location.href='qris.html'},900);
+});
+</script>
+
+</body>
+</html>
