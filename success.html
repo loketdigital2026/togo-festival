@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0C2C91">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Informasi status pending transaksi pembelian tiket Semarak Kehutanan Semarak Kehutanan 2026 dan konfirmasi pembayaran melalui WhatsApp Admin.">
+  <title>Transaksi Pending - Semarak Kehutanan 2026</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    :root{
+      --navy:#102b57;
+      --navy2:#183d73;
+      --gold:#c99a2e;
+      --gold-light:#f4d98a;
+      --cream:#fffaf0;
+      --ivory:#fffdf8;
+      --text:#1c2738;
+      --muted:#7d8797;
+      --line:#ece6d8;
+      --blue:#3561ff;
+      --warning:#f59e0b;
+      --warning-bg:#fff8e8;
+      --success:#16a34a;
+      --success-bg:#ecfdf3;
+      --shadow:0 15px 50px rgba(16,43,87,.08);
+    }
+    
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    
+    body{
+      min-height:100vh;
+      font-family:'Plus Jakarta Sans',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 0%,rgba(244,217,138,.20),transparent 30%),
+        radial-gradient(circle at 90% 100%,rgba(23,55,201,.10),transparent 30%),
+        #f4f7ff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* === HEADER (Sama seperti form.html & qris.html) === */
+    .app-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#fff;
+      box-shadow:0 2px 10px rgba(0,0,0,0.03);
+    }
+    .topbar{
+      min-height:80px;
+      padding:15px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:linear-gradient(180deg,#ffffff 0%,#fffdf8 100%);
+      border-bottom:1px solid #eee9de;
+    }
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-img{
+      width:42px;height:42px;border-radius:12px;object-fit:cover;background:#fff;
+      box-shadow:0 4px 14px rgba(80,62,28,.10);
+    }
+    .logo-text{
+      height:32px;width:auto;object-fit:contain;border-radius:6px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+    .lang{
+      padding:8px 13px;border-radius:999px;background:#f6f7f9;border:1px solid #eceef2;
+      font-size:12px;font-weight:700;color:#4d5868;
+    }
+
+    /* === MAIN CONTENT === */
+    .wrapper{
+      width:100%;
+      max-width:680px;
+      margin:40px auto;
+      padding:0 20px;
+      animation:slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card{
+      background:rgba(255,255,255,.96);
+      border:1px solid #ebe7de;
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      position:relative;
+    }
+
+    .hero{
+      padding:45px 34px 35px;
+      text-align:center;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg,#ffffff 0%,#fffdf8 100%);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before {
+      content:'';
+      position:absolute;
+      top:-50%;left:50%;
+      transform:translateX(-50%);
+      width:120%;height:100%;
+      background:radial-gradient(circle, rgba(244,217,138,0.12) 0%, transparent 70%);
+      pointer-events:none;
+    }
+    .status-icon{
+      width:92px;height:92px;margin:0 auto 23px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      background:var(--warning-bg);
+      border:10px solid #fff2cc;
+      box-shadow:0 12px 35px rgba(245,158,11,.14);
+      color:var(--warning);
+      animation:pulse 2s infinite ease-in-out;
+      position:relative;z-index:1;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); box-shadow: 0 12px 45px rgba(245,158,11,.25); }
+    }
+    .status-icon svg{width:38px;height:38px}
+    .eyebrow{
+      color:var(--warning);font-size:12px;font-weight:800;
+      letter-spacing:1.5px;text-transform:uppercase;margin-bottom:9px;
+      position:relative;z-index:1;
+    }
+    h1{
+      font-size:clamp(26px,5vw,36px);
+      line-height:1.15;letter-spacing:-1.2px;margin-bottom:14px;
+      color:var(--navy);
+      position:relative;z-index:1;
+    }
+    .lead{
+      color:var(--muted);font-size:15px;line-height:1.75;
+      max-width:520px;margin:auto;
+      position:relative;z-index:1;
+    }
+
+    .content{padding:30px 34px 34px}
+
+    .notice{
+      display:flex;gap:14px;align-items:flex-start;
+      padding:18px;border-radius:18px;margin-bottom:18px;
+      transition:transform 0.3s ease;
+    }
+    .notice:hover { transform: translateY(-2px); }
+    .notice.warning{background:var(--warning-bg);border:1px solid #fde7ad}
+    .notice.success{background:var(--success-bg);border:1px solid #c9f0d8}
+    .notice-icon{
+      flex:0 0 38px;width:38px;height:38px;border-radius:12px;
+      display:grid;place-items:center;font-weight:900;font-size:16px;
+    }
+    .warning .notice-icon{background:#fff0c5;color:#b77900}
+    .success .notice-icon{background:#d7f8e3;color:var(--success)}
+    .notice h2{font-size:15px;margin-bottom:5px;color:var(--text)}
+    .notice p{font-size:13.5px;color:#5e687b;line-height:1.65}
+
+    .admin{
+      padding:22px;border-radius:18px;
+      background:linear-gradient(135deg,#f5f7ff,#eef2ff);
+      border:1px solid #e0e6ff;
+      margin-top:22px;
+      text-align:center;
+    }
+    .admin-label{
+      font-size:11px;text-transform:uppercase;letter-spacing:1px;
+      color:#718096;font-weight:800;margin-bottom:7px;
+    }
+    .phone{
+      font-size:24px;font-weight:900;letter-spacing:.3px;
+      color:var(--navy);margin-bottom:15px;
+    }
+    .wa{
+      width:100%;border:0;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      padding:15px 18px;border-radius:14px;
+      background:linear-gradient(135deg, #25D366, #128C7E);
+      color:#fff;
+      font-size:14.5px;font-weight:800;
+      box-shadow:0 10px 24px rgba(32,199,107,.22);
+      transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration:none;
+      position:relative;overflow:hidden;
+      font-family:inherit;
+    }
+    .wa:hover{
+      transform:translateY(-3px);
+      box-shadow:0 15px 30px rgba(32,199,107,.35);
+      filter:brightness(1.05);
+    }
+    .wa:active { transform: translateY(-1px); }
+    .wa svg{width:21px;height:21px;fill:currentColor}
+
+    .steps{margin-top:27px}
+    .steps-title{font-size:15px;font-weight:800;margin-bottom:14px;color:var(--text)}
+    .step{display:flex;gap:13px;margin:13px 0;color:#596579;font-size:13.5px;line-height:1.55}
+    .num{
+      width:26px;height:26px;flex:0 0 26px;border-radius:50%;
+      background:#e9edff;color:var(--blue);
+      display:grid;place-items:center;font-size:12px;font-weight:900;
+    }
+
+    /* === AUTO REDIRECT BOX === */
+    .redirect-box {
+      margin-top: 25px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    .redirect-info { display: flex; flex-direction: column; }
+    .redirect-title { font-size: 13px; font-weight: 700; color: var(--text); }
+    .redirect-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .redirect-counter {
+      background: var(--ivory);
+      border: 1px solid #ead9a9;
+      width: 45px; height: 45px;
+      border-radius: 12px;
+      display: grid; place-items: center;
+      font-weight: 800; color: var(--gold);
+      font-size: 16px;
+    }
+    .progress-bar-bg {
+      width: 100%; height: 5px;
+      background: #edf0f5;
+      border-radius: 10px;
+      margin-top: 15px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--navy), var(--gold));
+      width: 100%;
+      animation: shrink 15s linear forwards;
+      border-radius: 10px;
+    }
+    @keyframes shrink {
+      from { width: 100%; }
+      to { width: 0%; }
+    }
+
+    footer{text-align:center;color:#98a2b3;font-size:12px;padding:25px 10px 5px}
+    
+    @media(max-width:560px){
+      .wrapper{margin:20px auto}
+      .card{border-radius:20px}
+      .hero{padding:35px 22px 28px}
+      .content{padding:25px 20px 25px}
+      .phone{font-size:21px}
+      .status-icon{width:82px;height:82px;border-width:8px}
+      .redirect-box { flex-direction: column; text-align: center; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="topbar">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="ETATIX Icon" class="logo-img" width="42" height="42">
+        <img src="logo.png" alt="ETATIX" class="logo-text">
+      </a>
+      <div class="lang">🇮🇩 ID</div>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="card">
+      <div class="hero">
+        <div class="status-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 7v5l3 2"></path>
+          </svg>
+        </div>
+        <div class="eyebrow">Status Transaksi</div>
+        <h1>Transaksi Sedang Pending</h1>
+        <p class="lead">
+          Mohon maaf atas ketidaknyamanannya. Transaksi pembelian tiket Semarak Kehutanan 2026 Anda saat ini
+          belum dapat diproses karena sistem pembayaran sedang memerlukan konfirmasi admin.
+        </p>
+      </div>
+
+      <div class="content">
+        <div class="notice warning">
+          <div class="notice-icon">!</div>
+          <div>
+            <h2>Pembayaran Belum Dapat Diproses</h2>
+            <p>
+              Pastikan instruksi pembayaran yang tampil pada halaman ini masih berlaku sebelum melakukan pembayaran.
+              Untuk melakukan pembayaran ulang, silakan konfirmasi terlebih dahulu
+              kepada WhatsApp Admin.
+            </p>
+          </div>
+        </div>
+
+        <div class="admin">
+          <div class="admin-label">Konfirmasi Pembayaran Ulang</div>
+          <div class="phone">+62 823-8560-6518</div>
+          <a class="wa" href="https://wa.me/6282385606518?text=Halo%20Admin%2C%20saya%20ingin%20konfirmasi%20pembayaran%20ulang%20tiket%20Semarak Kehutanan IPB%2010.0%20karena%20transaksi%20saya%20berstatus%20pending." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 3.5A11.8 11.8 0 0 0 12.08 0C5.55 0 .24 5.31.24 11.84c0 2.09.55 4.13 1.59 5.93L.13 24l6.38-1.67a11.82 11.82 0 0 0 5.57 1.41h.01c6.52 0 11.83-5.31 11.83-11.84 0-3.16-1.23-6.13-3.42-8.4ZM12.09 21.72h-.01a9.84 9.84 0 0 1-5.02-1.38l-.36-.21-3.79.99 1.01-3.69-.23-.38a9.84 9.84 0 0 1-1.51-5.21C2.18 6.41 6.62 1.97 12.08 1.97a9.84 9.84 0 0 1 9.84 9.86c0 5.46-4.44 9.89-9.83 9.89Zm5.42-7.41c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.51-1.78-1.69-2.08-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+            </svg>
+            Konfirmasi via WhatsApp Admin
+          </a>
+        </div>
+
+        <div class="notice success" style="margin-top:20px;margin-bottom:0">
+          <div class="notice-icon">✓</div>
+          <div>
+            <h2>Jika Saldo Sempat Terpotong, Tidak Perlu Khawatir</h2>
+            <p>
+              Saldo akan dikembalikan secara otomatis apabila transaksi tidak berhasil.
+              Proses pengembalian dapat memerlukan waktu paling lama <strong>1×24 jam</strong>.
+              Silakan cek saldo secara berkala.
+            </p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="steps-title">Yang perlu Anda lakukan</div>
+          <div class="step"><span class="num">1</span><span>Jangan gunakan kode QR pembayaran sebelumnya.</span></div>
+          <div class="step"><span class="num">2</span><span>Hubungi WhatsApp Admin untuk konfirmasi pembayaran ulang.</span></div>
+          <div class="step"><span class="num">3</span><span>Jika saldo terpotong, tunggu proses pengembalian otomatis dan cek secara berkala.</span></div>
+        </div>
+
+        <!-- Auto Redirect Info -->
+        <div class="redirect-box">
+          <div class="redirect-info">
+            <div class="redirect-title">Auto Redirect ke Beranda</div>
+            <div class="redirect-sub">Halaman akan dialihkan otomatis.</div>
+          </div>
+          <div class="redirect-counter" id="countdown">15</div>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>Harap simpan halaman ini sebagai referensi status transaksi Anda.</footer>
+  </main>
+
+  <script>
+    // Script Countdown & Auto Redirect
+    let timeLeft = 15;
+    const countdownEl = document.getElementById('countdown');
+
+    const timerId = setInterval(() => {
+      timeLeft--;
+      countdownEl.textContent = timeLeft;
+      
+      if (timeLeft <= 0) {
+        clearInterval(timerId);
+        // Redirect ke halaman beranda (index.html)
+        window.location.href = 'index.html';
+      }
+    }, 1000);
+
+    // Pause redirect jika user melakukan interaksi klik di dalam halaman (opsional UX terbaik)
+    // Jika tidak ingin di-pause, hapus blok code di bawah ini.
+    document.body.addEventListener('click', function(e) {
+      // Cek apakah yang diklik BUKAN link WhatsApp
+      if(!e.target.closest('.wa')) {
+        clearInterval(timerId);
+        document.querySelector('.progress-bar-fill').style.animationPlayState = 'paused';
+        countdownEl.textContent = "⏸";
+      }
+    });
+  </script>
+</body>
+</html>
